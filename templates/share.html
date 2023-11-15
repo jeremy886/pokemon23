@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pokémon API App</title>
+</head>
+
+<body>
+<img src="static/welcome.png" width="400">
+<h1>Share Your Pokémon Link</h1>
+<form method="post">
+    <input type="text" name="pokemon_link" placeholder="Enter Pokémon link">
+    <input type="submit" value="Share">
+</form>
+
+{% if pokemon_links %}
+    <h2>Copy this Pokémon link and share with your friends!</h2>
+    <h3>Links posted:</h3>
+    {% for pokemon_link in pokemon_links %}
+        <a href="{{ pokemon_link }}">{{ pokemon_link }}</a>
+        <br/>
+    {% endfor %}
+{% endif %}
+
+<hr/>
+<a href="/">Home</a> <a href="/share">Share</a>
+</body>
+</html>
